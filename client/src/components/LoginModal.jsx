@@ -5,7 +5,7 @@ import LoginImage from "../assets/login_image.svg";
 import DividerVertical from "../assets/divider_line.svg";
 import InputComponent from "./InputComponent";
 // import GoogleIcon from "../assets/google_icon2.svg";
-import { GoLock, GoMail, GoEye, GoEyeClosed } from "react-icons/go";
+import { GoLock, GoMail } from "react-icons/go";
 import { FormProvider, useForm } from "react-hook-form";
 import axios from "axios";
 import {
@@ -89,11 +89,6 @@ function LoginModal({ toggle, toggleSignup, toggleForgot, logUpdate }) {
 
     google.accounts.id.prompt();
   }, []);
-  const [passwordVisible, setPasswordVisible] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setPasswordVisible(!passwordVisible);
-  };
 
   return (
     <>
@@ -149,8 +144,7 @@ function LoginModal({ toggle, toggleSignup, toggleForgot, logUpdate }) {
               <FormProvider {...methods}>
                 <form
                   className="login-form w-full flex flex-col flex-nowrap justify-center items-center"
-                  onSubmit={(e) => e.preventDefault()}
-                >
+                  onSubmit={(e) => e.preventDefault()}>
                   <InputComponent
                     logo={
                       <GoMail className="relative top-7 left-3  text-gray-500" />
@@ -163,23 +157,18 @@ function LoginModal({ toggle, toggleSignup, toggleForgot, logUpdate }) {
                     submitClicked={submitInputs}
                     {...email_validation}
                   />
-                  <div className="relative">
-                    <input
-                      className="border border-gray-300 rounded-md px-4 py-2 pr-10 focus:outline-none focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300"
-                      type={passwordVisible ? "text" : "password"}
-                      placeholder="Enter password"
-                      name="user_password"
-                      required
-                      {...password_validation}
-                    />
-                    <button
-                      type="button"
-                      className="absolute top-1/2 transform -translate-y-1/2 right-3 text-gray-500"
-                      onClick={togglePasswordVisibility}
-                    >
-                      {passwordVisible ? <GoEyeClosed /> : <GoEye />}
-                    </button>
-                  </div>
+                  <InputComponent
+                    logo={
+                      <GoLock className="relative top-7 left-3  text-gray-500" />
+                    }
+                    label="Password"
+                    name="user_password"
+                    placeholder="Enter password"
+                    type="password"
+                    required="required"
+                    submitClicked={submitInputs}
+                    {...password_validation}
+                  />
                   <label className="text-grey-500 text-sm flex justify-center">
                     <AnimatePresence mode="wait" initial={false}>
                       {errors.signed_checkbox && (
@@ -199,16 +188,14 @@ function LoginModal({ toggle, toggleSignup, toggleForgot, logUpdate }) {
                     &nbsp;
                     <button
                       onClick={toggleForgot}
-                      className="text-medium-purple "
-                    >
+                      className="text-medium-purple ">
                       Forgot password?
                     </button>
                   </label>
 
                   <button
                     onClick={submitInputs}
-                    className="w-9/12 h-10 my-3 bg-medium-purple hover:bg-medium-purple-hover rounded-md text-white"
-                  >
+                    className="w-9/12 h-10 my-3 bg-medium-purple hover:bg-medium-purple-hover rounded-md text-white">
                     Sign In
                   </button>
                 </form>
