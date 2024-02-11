@@ -85,10 +85,11 @@ export const checkLogin = (req, res) => {
 };
 
 export const checkPassword = (req, res) => {
-    const { user_password } = req.body;
+    // console.log(req.body, "Check Password request");
+    const { user_password, user_id } = req.body;
 
-    const q = "SELECT * FROM user ";
-    db.query(q, (err, result) => {
+    const q = "SELECT * FROM user WHERE user_id =?";
+    db.query(q, [user_id], (err, result) => {
         if (err) {
             return res
                 .status(401)
@@ -103,25 +104,29 @@ export const checkPassword = (req, res) => {
                     return res
                         .status(401)
                         .json({ message: "Invalid  password" });
+                } else {
+                    return res
+                        .status(200)
+                        .json({ message: "Password Verified." });
                 }
             } catch (err) {
                 return res.status(401).json({ message: "Invalid password" });
             }
 
-            const token = jwt.sign(
-                {
-                    username: result[0].user_full_name,
-                    user_id: result[0].user_id,
-                },
-                process.env.JWT_SECRET,
-                { expiresIn: "1h" }
-            );
-            res.cookie("UserToken123", token, { httpOnly: true });
-            res.status(200).json({
-                message: `Login successful. Redirecting...`,
-                username: result[0].user_full_name,
-                user_id: result[0].user_id,
-            });
+            // const token = jwt.sign(
+            //     {
+            //         username: result[0].user_full_name,
+            //         user_id: result[0].user_id,
+            //     },
+            //     process.env.JWT_SECRET,
+            //     { expiresIn: "1h" }
+            // );
+            // res.cookie("UserToken123", token, { httpOnly: true });
+            // res.status(200).json({
+            //     message: `Login successful. Redirecting...`,
+            //     username: result[0].user_full_name,
+            //     user_id: result[0].user_id,
+            // });
         }
     });
 };
