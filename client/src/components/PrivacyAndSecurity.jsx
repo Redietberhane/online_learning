@@ -5,14 +5,12 @@ import PassChangeModal from "./passChangeModal";
 import axios from "axios";
 
 function ProfilePrivacy() {
-    const [currentEmail, setCurrnetEmail] = useState(
-        localStorage.getItem("email")
-    );
+    // const [currentEmail, setCurrentEmail] = useState(
+    //     localStorage.getItem("user_email")
+    // );
     // const [confirmation, setConfirmation] = useState("");
     const [message, setMessage] = useState("");
-    const [currentPassword, setCurrentPassword] = useState(
-        localStorage.getItem("password")
-    );
+    const [currentPassword, setCurrentPassword] = useState("*************");
     // const [newPassword, setNewPassword] = useState("");
     const [paModal, setPaModal] = useState(false);
     const [emailModal, setEmailModal] = useState(false);
@@ -29,23 +27,22 @@ function ProfilePrivacy() {
         setPassModal(!passModal);
     };
 
-    useEffect(() => {
-        const userId = localStorage.getItem("user_id");
-        const apiUrl = `/users/getUserById/${userId}`;
+    // useEffect(() => {
+    //     const userId = localStorage.getItem("user_id");
+    //     const apiUrl = `/users/getUserById/${userId}`;
+    //     axios
+    //         .get(apiUrl)
+    //         .then((response) => {
+    //             const { user_password } = response.data[0];
 
-        axios
-            .get(apiUrl)
-            .then((response) => {
-                const { user_email, user_password } = response.data[0];
-
-                // Set user email and password in state
-                setCurrentPassword(user_password);
-                setCurrnetEmail(user_email);
-            })
-            .catch((error) => {
-                console.error("Error fetching user data:", error);
-            });
-    }, []);
+    //             // Set user email and password in state
+    //             setCurrentPassword(user_password);
+    //             setCurrentEmail(localStorage.getItem("user_email"));
+    //         })
+    //         .catch((error) => {
+    //             console.error("Error fetching user data:", error);
+    //         });
+    // }, []);
     return (
         <div>
             {paModal && (
@@ -72,7 +69,7 @@ function ProfilePrivacy() {
                         type="email"
                         className="w-full p-2 border rounded"
                         placeholder="Your Email"
-                        value={currentEmail}
+                        value={localStorage.getItem("user_email")}
                         readOnly={true}
                     />
                 </div>

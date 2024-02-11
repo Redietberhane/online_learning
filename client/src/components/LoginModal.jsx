@@ -45,6 +45,8 @@ function LoginModal({
                 setFailure(false);
                 localStorage.setItem("username", res.data.username);
                 localStorage.setItem("user_id", res.data.user_id);
+                localStorage.setItem("user_email", res.data.user_email);
+
                 logUpdate();
                 setTimeout(() => {
                     setSubmitSuccess(false);
@@ -80,6 +82,7 @@ function LoginModal({
             console.log("Name: " + userObject.name);
             localStorage.setItem("username", userObject.name);
             localStorage.setItem("user_id", userObject.sub);
+            localStorage.setItem("user_email", userObject.email);
 
             // Alternatively, you can log the entire object as a JSON string
             console.log(

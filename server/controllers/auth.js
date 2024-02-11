@@ -53,6 +53,7 @@ export const login = (req, res) => {
                     message: `Login successful. Redirecting...`,
                     username: result[0].user_full_name,
                     user_id: result[0].user_id,
+                    user_email: result[0].user_email,
                 });
             }
         }
@@ -160,7 +161,10 @@ export const changeEmail = (req, res) => {
                 if (newEmailResult.length > 0) {
                     return res
                         .status(400)
-                        .json({ message: "New email already in use" });
+                        .json({
+                            message:
+                                "New e-mail already in use. Provide another e-mail",
+                        });
                 }
 
                 const updateEmailQuery =
@@ -201,10 +205,11 @@ export const changeEmail = (req, res) => {
 };
 
 export const changePassword = (req, res) => {
-    const { user_email, user_password } = req.body;
+    const { user_id, new_password } = req.body;
 
     const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(user_password, salt);
+    const hashedPassword = bcrypt.hashSync(new_password, salt);
+
     // const saltRounds = 10;
     // bcrypt.hash(user_password, saltRounds, (hashErr, hashedPassword) => {
     //     if (hashErr) {
@@ -215,14 +220,12 @@ export const changePassword = (req, res) => {
     // });
 
     const updatePasswordQuery =
-        "UPDATE user SET user_password=? WHERE user_email=?";
-    db.query(updatePasswordQuery, [hash, user_email], (updateErr) => {
+        "UPDATE user SET user_password=? WHERE user_id=?";
+    db.query(updatePasswordQuery, [hashedPassword, user_id], (updateErr) => {
         if (updateErr) {
-            return res
-                .status(500)
-                .json({
-                    message: "Unable to update password! Please try again.",
-                });
+            return res.status(500).json({
+                message: "Unable to update password! Please try again.",
+            });
         }
 
         // Return a success message

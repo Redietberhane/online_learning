@@ -39,6 +39,7 @@ function ChangeEmailModal({ toggle }) {
                 setSubmitSuccess(true);
                 setMsg(res.data.message);
                 setFailure(false);
+                localStorage.setItem("user_email", res.data.user_email);
 
                 setTimeout(() => {
                     setSubmitSuccess(false);

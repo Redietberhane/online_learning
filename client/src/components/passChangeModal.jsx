@@ -35,16 +35,23 @@ function PassChangeModal({ toggle }) {
     // const [currentPassword, setCurrentPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
 
-    const submitInputs = handleSubmit(() => {
-        if (newPassword === confirmation) {
-            // Create a data object with user_email and user_password
-            const data = {
-                user_email: localStorage.getItem("email"), // Replace with your actual user_email value
-                user_password: newPassword,
+    const submitInputs = handleSubmit((data) => {
+        console.log(data, "new psd");
+        if (data.new_password !== data.confirm_password) {
+            setSubmitSuccess(true);
+            setMsg("Passwords do not match. Please confirm your new password.");
+            setFailure(true);
+            setTimeout(() => {
+                setSubmitSuccess(false);
+            }, 4000);
+        } else {
+            const newData = {
+                user_id: localStorage.getItem("user_id"), // Replace with your actual user_email value
+                ...data,
             };
 
             axios
-                .post("/auth/change-Password", data) // Update the API endpoint as needed
+                .post("/auth/change-Password", newData) // Update the API endpoint as needed
                 .then((res) => {
                     setSubmitSuccess(true);
                     setMsg("Password changed successfully.");
@@ -63,13 +70,6 @@ function PassChangeModal({ toggle }) {
                         setSubmitSuccess(false);
                     }, 4000);
                 });
-        } else {
-            setSubmitSuccess(true);
-            setMsg("Passwords do not match. Please confirm your new password.");
-            setFailure(true);
-            setTimeout(() => {
-                setSubmitSuccess(false);
-            }, 4000);
         }
     });
 
@@ -114,7 +114,7 @@ function PassChangeModal({ toggle }) {
                                 logo={
                                     <GoLock className="relative top-7 left-3  text-gray-500" />
                                 }
-                                name="user_password"
+                                name="confirm_password"
                                 placeholder="Confirm the password"
                                 type="password"
                                 required="required"
