@@ -65,7 +65,7 @@ export const logout = (req, res) => {
 };
 
 export const checkLogin = (req, res) => {
-    const token = req.cookies.token;
+    const token = req.cookies.UserToken123;
     if (!token) {
         return res.status(401).send({ message: "Unauthorized" });
     }
