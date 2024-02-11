@@ -1,20 +1,16 @@
 import React, { useState } from "react";
-import EduviLogo from "../assets/eduvi_logo.svg";
-import { useNavigate } from "react-router-dom";
 import {
     email_validation,
-    name_validation,
-    password_validation,
+    // name_validation,
+    // password_validation,
 } from "../utils/inputValidations";
-import LoginImage from "../assets/login_image.svg";
-import DividerVertical from "../assets/divider_line.svg";
+// import LoginImage from "../assets/login_image.svg";
+// import DividerVertical from "../assets/divider_line.svg";
 import InputComponent from "./InputComponent";
-import GoogleIcon from "../assets/google_icon2.svg";
-import { GoLock, GoMail, GoPerson } from "react-icons/go";
+// import GoogleIcon from "../assets/google_icon2.svg";
+import { GoMail } from "react-icons/go";
 import { FormProvider, useForm } from "react-hook-form";
 import axios from "axios";
-import { AnimatePresence } from "framer-motion";
-import InputError from "./InputError";
 import ResponseMessage from "./ResponseMessage";
 import { BsFillXSquareFill } from "react-icons/bs";
 
@@ -22,19 +18,19 @@ function ChangeEmailModal({ toggle }) {
     const methods = useForm();
 
     const {
-        register,
+        // register,
         handleSubmit,
-        formState: { errors },
+        // formState: { errors },
     } = methods;
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const [submitSuccess, setSubmitSuccess] = useState(false);
     const [failure, setFailure] = useState(false);
     const [response_msg, setMsg] = useState("");
-    const [newEmail, setNewEmail] = useState("");
-    const [confirmation, setConfirmation] = useState("");
-    const [message, setMessage] = useState("");
+    // const [newEmail, setNewEmail] = useState("");
+    // const [confirmation, setConfirmation] = useState("");
+    // const [message, setMessage] = useState("");
 
     const submitInputs = handleSubmit((data) => {
         axios
@@ -43,8 +39,6 @@ function ChangeEmailModal({ toggle }) {
                 setSubmitSuccess(true);
                 setMsg(res.data.message);
                 setFailure(false);
-                // localStorage.setItem("username", res.data.username);
-                // localStorage.setItem("user_id", res.data.user_id);
 
                 setTimeout(() => {
                     setSubmitSuccess(false);

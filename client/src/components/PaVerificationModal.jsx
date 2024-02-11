@@ -49,8 +49,6 @@ function PaVerificationModal({
                 setSubmitSuccess(true);
                 setMsg(res.data.message);
                 setFailure(false);
-                // localStorage.setItem("username", res.data.username);
-                // localStorage.setItem("user_id", res.data.user_id);
 
                 setTimeout(() => {
                     setSubmitSuccess(false);
