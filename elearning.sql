@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2023 at 02:18 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.1.32
+-- Generation Time: Feb 11, 2024 at 07:46 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_username`, `admin_password`, `admin_token`) VALUES
-('9a999a16-ecd2-4d43-abc5-2703baccc98f', 'nm', '$2a$10$hVZzmemnf20uWzMP0HWBxuQSFNhlJn6kgYzggpSi5T6woif5EQxbO', NULL);
+('9a999a16-ecd2-4d43-abc5-2703baccc98f', 'Paulos', '$2a$10$Xm1OQKd1AFz6fwoFyj9mjuFBk2N8JAZxr0K6aJTqb0uCEItaOkXJK', NULL);
 
 -- --------------------------------------------------------
 
@@ -65,8 +65,8 @@ CREATE TABLE `book` (
 --
 
 INSERT INTO `book` (`book_id`, `book_title`, `book_details`, `book_author`, `book_purchases`, `book_price`, `book_rating`, `book_date_created`, `book_archived`, `book_thumbnail`) VALUES
-('0cb1d33d-78cc-4fef-8a27-3d181573e6f3', 'Amharic book 3', 'Pariatur velit fugiat consectetur occaecat sit ex. Esse dolore esse non amet reprehenderit Lorem minim elit mollit et in. Pariatur sint in et laborum. Sit magna irure do tempor.        Pariatur velit fugiat consectetur occaecat sit ex. Esse dolore esse non amet reprehenderit Lorem minim elit mollit et in. Pariatur sint in et laborum. Sit magna irure do tempor.\r\nPariatur velit fugiat consectetur occaecat sit ex. Esse dolore esse non amet reprehenderit Lorem minim elit mollit et in. Pariatur sint in et laborum. Sit magna irure do tempor. Pariatur velit fugiat consectetur occaecat sit ex. Esse dolore esse non amet reprehenderit Lorem minim elit mollit et in. Pariatur sint in et laborum. Sit magna irure do tempor.\r\n\r\n', 'Kebede\'s', 0, 57, 0, '2023-09-12 23:12:17.000000', 0, '0cb1d33d-78cc-4fef-8a27-3d181573e6f3.png'),
-('200f7364-70c8-40c7-a9fe-347e8172316d', 'smth', 'smth', 'smth', 0, 456, 0, '2023-09-13 00:56:32.000000', 0, NULL),
+('0cb1d33d-78cc-4fef-8a27-3d181573e6f3', 'Amharic book 3', 'Pariatur velit fugiat consectetur occaecat sit ex. Esse dolore esse non amet reprehenderit Lorem minim elit mollit et in. Pariatur sint in et laborum. Sit magna irure do tempor.        Pariatur velit fugiat consectetur occaecat sit ex. Esse dolore esse non amet reprehenderit Lorem minim elit mollit et in. Pariatur sint in et laborum. Sit magna irure do tempor.\r\nPariatur velit fugiat consectetur occaecat sit ex. Esse dolore esse non amet reprehenderit Lorem minim elit mollit et in. Pariatur sint in et laborum. Sit magna irure do tempor. Pariatur velit fugiat consectetur occaecat sit ex. Esse dolore esse non amet reprehenderit Lorem minim elit mollit et in. Pariatur sint in et laborum. Sit magna irure do tempor.\r\n\r\n', 'Kebede\'s', 2, 57, 4.5, '2023-09-12 23:12:17.000000', 0, '0cb1d33d-78cc-4fef-8a27-3d181573e6f3.png'),
+('200f7364-70c8-40c7-a9fe-347e8172316d', 'smth', 'smth', 'smth', 0, 456, 3.5, '2023-09-13 00:56:32.000000', 0, NULL),
 ('7d0e78e3-2e4e-44f2-b073-2a3e92a4f5a8', 'Amharic book', 'description here', 'Kebede', 0, 457, 0, '2023-09-12 23:11:33.000000', 1, NULL),
 ('8d8cbccd-fec8-45ad-87db-316db5c3c5ca', 'New Book', 'description', 'Kebede Abebe', 0, 200, 0, '2023-09-18 15:43:00.000000', 0, '8d8cbccd-fec8-45ad-87db-316db5c3c5ca.png'),
 ('d8469824-120d-4222-a4a1-38afa68ea279', 'Amharic book', 'desc', 'Kebede', 0, 7800, 0, '2023-09-13 03:05:38.000000', 0, NULL);
@@ -149,18 +149,18 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`course_id`, `course_title`, `course_details`, `course_level`, `course_certificate`, `course_students`, `course_rating`, `course_sections`, `course_archived`, `course_price`, `course_instructor`, `course_max_comments`, `course_total_hour`, `course_date_created`, `course_thumbnail`) VALUES
-('00b109c9-ed5c-44ed-9bef-474dd97056d4', 'new name', 'details', 'Advanced', 1, 0, '3.5', 4, 0, 2000, 'Paul', 5, 123, '2023-09-14 00:14:03.000000', NULL),
-('05054689-9bc3-471f-ab6f-970e8f56d05f', 'Psychology', 'psy', 'Intermediate', 1, 0, '0', 0, 0, 5600, 'Dagi', 5, 40, '2023-09-13 03:09:17.000000', NULL),
+('00b109c9-ed5c-44ed-9bef-474dd97056d4', 'new name', 'details', 'Advanced', 1, 0, '3.5', 3, 0, 2000, 'Paul', 5, 123, '2023-09-14 00:14:03.000000', NULL),
+('05054689-9bc3-471f-ab6f-970e8f56d05f', 'Psychology', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Intermediate', 1, 1, '0', 1, 0, 5600, 'Dagi', 5, 40, '2023-09-13 03:09:17.000000', '05054689-9bc3-471f-ab6f-970e8f56d05f.png'),
 ('19a45b62-6f39-4034-8ca1-85770e6c7193', 'Tigrigna course', 'klsjfdslkfjsdlkfjsdklfjdslkf', 'Advanced', 1, 0, '0', 0, 0, 78, 'Kebede', 5, 12345, '2023-09-07 23:09:37.000000', NULL),
-('4c44cc8d-bce2-4ac5-9968-11821296afb4', 'Advaned Amharic Lesson ', 'Details ', 'Intermediate', 1, 0, '0', 0, 0, 200, 'Dr Abebe', 5, 3, '2023-09-13 04:00:43.000000', NULL),
+('4c44cc8d-bce2-4ac5-9968-11821296afb4', 'Advanced Amharic Lesson ', 'Details ', 'Intermediate', 1, 0, '0', 0, 0, 200, 'Dr Abebe', 5, 3, '2023-09-13 04:00:43.000000', '4c44cc8d-bce2-4ac5-9968-11821296afb4.png'),
 ('5a0398dc-8998-4409-b9a5-f1adf380f3a1', 'sdfdsfsdfsd', 'fsdffssssssssss', 'Beginner', 1, 0, '0', 0, 1, 345, 'sdfghjk', 5, 23, '2023-09-08 00:09:57.000000', NULL),
-('9154f207-9a25-418c-9b87-34257ef565d9', 'llsdjkfjkdsljflsdkjfsdljfkld', 'klsjfdslkfjsdlkfjsdklfjdslkf', 'Advanced', 1, 0, '0', 0, 0, 12, 'ksljdflfksdjfkldsjfksdlfjdskl', 5, 13, '2023-09-07 23:22:04.000000', NULL),
-('985af890-025f-4cdb-a425-858d48d9c49a', 'Amharic Lesson 1', 'klsjfdslkfjsdlkfjsdklfjdslkf', 'Advanced', 1, 0, '0', 0, 0, 12, 'ksljdflfksdjfkldsjfksdlfjdskl', 5, 13, '2023-09-07 23:12:52.000000', NULL),
+('9154f207-9a25-418c-9b87-34257ef565d9', 'llsdjkfjkdsljflsdkjfsdljfkld', 'klsjfdslkfjsdlkfjsdklfjdslkf', 'Advanced', 1, 0, '0', 0, 1, 12, 'ksljdflfksdjfkldsjfksdlfjdskl', 5, 13, '2023-09-07 23:22:04.000000', NULL),
+('985af890-025f-4cdb-a425-858d48d9c49a', 'Amharic Lesson 1', 'klsjfdslkfjsdlkfjsdklfjdslkf', 'Advanced', 1, 0, '0', 0, 1, 12, 'ksljdflfksdjfkldsjfksdlfjdskl', 5, 13, '2023-09-07 23:12:52.000000', NULL),
 ('a18537b7-7716-4db6-b21d-598d8843b258', 'sdfdsfsdfsd', 'fsdffssssssssss', 'Beginner', 1, 0, '0', 0, 1, 345, 'sdfghjk', 5, 23, '2023-09-08 00:08:00.000000', NULL),
 ('aaa0473e-3ebf-4b4a-a0fb-1cfa73add1ab', 'pt course', 'deeds', 'Intermediate', 1, 0, '0', 0, 0, 120, 'Abebe Molla', 5, 12, '2023-09-18 15:04:06.000000', 'aaa0473e-3ebf-4b4a-a0fb-1cfa73add1ab.jpg'),
 ('acfd41b1-d532-4782-ad46-a008a2f48aec', 'Amharic Lesson 2', 'Lesson details section', 'Beginner', 1, 0, '0', 0, 0, 908, 'Dagim', 5, 21, '2023-09-09 12:00:06.000000', NULL),
 ('c1bdec10-d0f1-4894-8028-cd9803afb749', 'አምህሪች', 'ክድልስፍጅክ ', 'Beginner', 1, 0, '0', 0, 1, 56, 'ዳግም', 5, 123, '2023-09-12 22:12:43.000000', NULL),
-('c6bf0b68-0c74-47d6-9320-26a58757c6c6', 'llsdjkfjkdsljflsdkjfsdljfkld', 'klsjfdslkfjsdlkfjsdklfjdslkf', 'Advanced', 1, 0, '0', 0, 0, 12, 'ksljdflfksdjfkldsjfksdlfjdskl', 5, 13, '2023-09-07 23:11:44.000000', NULL),
+('c6bf0b68-0c74-47d6-9320-26a58757c6c6', 'llsdjkfjkdsljflsdkjfsdljfkld', 'klsjfdslkfjsdlkfjsdklfjdslkf', 'Advanced', 1, 0, '0', 0, 1, 12, 'ksljdflfksdjfkldsjfksdlfjdskl', 5, 13, '2023-09-07 23:11:44.000000', NULL),
 ('c8c3fa7c-4050-4bf8-9fb1-23ca38cd511f', 'The nation', 'Dagim\'s personal favourite', 'Advanced', 1, 0, '0', 0, 0, 50000, 'Dagim', 5, 20, '2023-09-12 21:25:34.000000', NULL),
 ('faa2c699-971d-4394-9db9-edef4df7962c', 'sdfdsfsdfsd', 'fsdffssssssssss', 'Beginner', 1, 0, '0', 0, 0, 345, 'sdfghjk', 5, 23, '2023-09-08 00:21:23.000000', NULL);
 
@@ -184,18 +184,8 @@ CREATE TABLE `enrolled` (
 --
 
 INSERT INTO `enrolled` (`enrolled_id`, `enrolled_token`, `enrolled_course_completion`, `enrolled_date`, `user_id`, `course_id`) VALUES
-('06983c13-4894-4e52-a380-de554900ed49', NULL, 0, '2023-09-18 03:19:27.454000', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '9154f207-9a25-418c-9b87-34257ef565d9'),
-('17a33564-b585-4ce1-8373-f8751c63ae65', NULL, 0, '2023-09-18 03:11:54.129000', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '00b109c9-ed5c-44ed-9bef-474dd97056d4'),
-('3d869057-8339-4903-ae1f-c1a89ee20a31', NULL, 0, '2023-09-18 03:17:55.725000', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '05054689-9bc3-471f-ab6f-970e8f56d05f'),
-('57bf563e-d7f7-4687-a33f-918e742495c8', NULL, 0, '2023-09-18 03:17:55.725000', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '19a45b62-6f39-4034-8ca1-85770e6c7193'),
-('5ccd450e-3cba-4028-ba4b-ab9a8e5eed38', NULL, 0, '2023-09-18 03:15:58.256000', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '00b109c9-ed5c-44ed-9bef-474dd97056d4'),
 ('65352cc5-5e74-45fe-afcf-2d1d5445dcfa', NULL, 0, '2023-09-18 03:15:58.256000', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '05054689-9bc3-471f-ab6f-970e8f56d05f'),
-('6d55d719-ef39-45ae-82d5-9f4cbd761890', NULL, 0, '2023-09-18 03:19:27.454000', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '00b109c9-ed5c-44ed-9bef-474dd97056d4'),
-('9075649b-bf4b-41f9-b66b-f6b8f6ac6f84', NULL, 0, '2023-09-18 03:17:55.725000', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '4c44cc8d-bce2-4ac5-9968-11821296afb4'),
-('9cb3153d-3835-4f3d-a201-43e74b0675b6', NULL, 0, '2023-09-18 03:19:27.454000', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', 'acfd41b1-d532-4782-ad46-a008a2f48aec'),
-('b1fc215d-c9b9-4219-8186-5711fb119abd', NULL, 0, '2023-09-18 03:19:27.454000', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '05054689-9bc3-471f-ab6f-970e8f56d05f'),
-('cfd933b3-bb94-4d29-b3b3-769b812e080f', NULL, 0, '2023-09-18 03:17:55.725000', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '00b109c9-ed5c-44ed-9bef-474dd97056d4'),
-('ffc224d4-862f-409b-af51-17bec83be722', NULL, 0, '2023-09-18 03:19:27.454000', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '19a45b62-6f39-4034-8ca1-85770e6c7193');
+('9cb3153d-3835-4f3d-a201-43e74b0675b6', NULL, 0, '2023-09-18 03:19:27.454000', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', 'acfd41b1-d532-4782-ad46-a008a2f48aec');
 
 -- --------------------------------------------------------
 
@@ -245,28 +235,8 @@ CREATE TABLE `purchase` (
 
 INSERT INTO `purchase` (`purchase_id`, `user_id`, `book_id`, `purchase_token`, `purchase_date`) VALUES
 ('3f97a3e1-141a-4e32-81ce-eda710a9ee16', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '200f7364-70c8-40c7-a9fe-347e8172316d', '', '2023-09-18 03:15:58.256000'),
-('a814e90b-03f0-4096-92b8-fac98f71a5b7', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '0cb1d33d-78cc-4fef-8a27-3d181573e6f3', '', '2023-09-18 03:11:54.129000');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `question`
---
-
-CREATE TABLE `question` (
-  `question_id` varchar(36) NOT NULL,
-  `question_name` varchar(2000) NOT NULL,
-  `question_options` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`question_options`)),
-  `section_id` varchar(36) NOT NULL,
-  `question_date_created` datetime(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `question`
---
-
-INSERT INTO `question` (`question_id`, `question_name`, `question_options`, `section_id`, `question_date_created`) VALUES
-('c7540527-0e82-4a14-9fe1-fb4009bf2ea5', 'ques 1', '[{\"text\":\"ch 1\",\"isCorrect\":false},{\"text\":\"ch 2\",\"isCorrect\":true}]', 'c217aae1-beeb-4e01-9496-c63ea3bb85f6', '2023-09-25 03:17:54.000000');
+('a814e90b-03f0-4096-92b8-fac98f71a5b7', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '0cb1d33d-78cc-4fef-8a27-3d181573e6f3', '', '2023-09-18 03:11:54.129000'),
+('c82dca25-4abe-4d86-8f10-d1df9fb1763f', 'c09c4b57-65e5-4e58-8b6c-743c18f57589', '0cb1d33d-78cc-4fef-8a27-3d181573e6f3', '', '2023-09-18 16:57:02.139000');
 
 -- --------------------------------------------------------
 
@@ -290,9 +260,9 @@ CREATE TABLE `section` (
 --
 
 INSERT INTO `section` (`section_id`, `section_title`, `section_description`, `section_type`, `section_content`, `section_value`, `course_id`, `section_date_created`) VALUES
+('13c0932e-6b52-4208-b06b-ae3495baef31', 'quiz 1', 'this is the new quiz', 'quiz', 'new quiz', 10, '05054689-9bc3-471f-ab6f-970e8f56d05f', '2023-10-17 13:26:27.000000'),
 ('5a8a006e-cc45-4cf2-a0b3-643012f42e6c', 'Amharic section 2', 'dlks', 'video', '', 0, '00b109c9-ed5c-44ed-9bef-474dd97056d4', '2023-09-15 02:38:56.000000'),
 ('b649dbf9-cf4e-4140-bef7-8ed64f348fbc', 'Amharic section 1', 'deets', 'text', '', 0, '00b109c9-ed5c-44ed-9bef-474dd97056d4', '2023-09-15 02:31:55.000000'),
-('c217aae1-beeb-4e01-9496-c63ea3bb85f6', 'section stuff', 'desc', 'quiz', 'http::/localhost:3000/smth', 12, '00b109c9-ed5c-44ed-9bef-474dd97056d4', '2023-09-25 03:17:25.000000'),
 ('c4c7650b-80aa-4ae6-aeb3-a49378ef357d', 'Amharic section 3', 'deet', 'assignment', '', 23, '00b109c9-ed5c-44ed-9bef-474dd97056d4', '2023-09-15 02:39:42.000000');
 
 -- --------------------------------------------------------
@@ -316,10 +286,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_email`, `user_password`, `user_photo`, `user_token`, `user_full_name`, `user_date_joined`) VALUES
-('9a999a16-ecd2-4d43-abc5-2703baccc98f', 'pt3@gmail.com', '$2a$10$phHISPm5esQS5QveZqV9KOfeqzjL0VEukaP/c8TUOtaUik4eGWmxK', NULL, NULL, 'Paulos Teshome', '2023-09-16 17:38:22.046000'),
+('09f028a5-2650-4b5e-80fc-b9bab74bae83', 'rb@gmail.com', '$2a$10$ADszG.pU9worPHpzftLz9OPwPLY5Wij0Q7n1mel62E4/UHVHAVxcS', NULL, '$2a$10$Ke1i7IAZSK1XsHgMQ/SwjusPIEMC62D8Sr7DjoIzLLJjv7FNEQ.k.', 'Rediet Berhane', '2024-02-11 19:30:25.006000'),
+('60ef9880-38e5-49d3-879a-9353dfe8768f', 'ab@gmail.com', '$2a$10$HwQhaMwfhCWtmDgZC5vVduZDCD5z.lClDu.JSihJPPMF.9cVKg6XC', NULL, '$2a$10$K7LwFfx./oifZVAr1SfLz.hp5QBuLp8xRHSAeR.E4xVTXXiAhDsUO', 'Abebe', '2024-02-11 20:31:38.358000'),
+('83d49708-97b2-4194-802f-c6a601331a25', 'newuser@gmail.com', '$2a$10$Xm1OQKd1AFz6fwoFyj9mjuFBk2N8JAZxr0K6aJTqb0uCEItaOkXJK', NULL, '$2a$10$.wgMyyf96xbrTQ0JDOvvhO70yFsUUSgSGLeLPPnVpeAs9/Aaud6K2', 'New User', '2024-02-11 20:19:14.377000'),
 ('c09c4b57-65e5-4e58-8b6c-743c18f57589', 'pt4@gmail.com', '$2a$10$dGbAJXJh6orFEOYPcpDureen6kvetqw1TgSStDH3jy13KDzDtYLFS', NULL, NULL, 'Paulos Teshome', '2023-09-18 00:27:14.432000'),
-('ef8202ae-2188-44d7-8bb1-da4b2ee4a3a3', 'haileyabsera3@gmail.com', '$2a$10$/TmjzMTEsE06YqcLE/uRj.WVsoGSP2Wxd5ieH/8ydu0OwefVzAoa6', NULL, NULL, 'Natan Mekebib', '2023-09-07 21:52:13.984000'),
-('fceeca18-a0f3-4ab4-9ade-06e4d109746c', 'nm', '$2a$10$hVZzmemnf20uWzMP0HWBxuQSFNhlJn6kgYzggpSi5T6woif5EQxbO', NULL, NULL, 'Natan Mekebib', '2023-09-13 02:51:37.284000');
+('f86f0e90-5c7a-4c64-9d83-94611fa9f7c1', 'Paulman7792@gmail.com', '$2a$10$twbwVpnw4.glhiMPrWqBROq8K2r7cDFODPZ1qo.2.IA1e/pw8yWYq', NULL, '$2a$10$nGfzSJh8I8HF7NUAkYEx9u.rzcl/jkNCbR03iKfumXOpS26bYwaXO', 'Paulos Teshome', '2024-02-11 20:09:16.795000');
 
 -- --------------------------------------------------------
 
@@ -346,7 +317,7 @@ CREATE TABLE `web_content` (
 --
 
 INSERT INTO `web_content` (`web_content_id`, `goal_title`, `hero_title`, `goal_detail`, `hero_detail`, `lesson_title`, `lesson_detail`, `action_title`, `action_detail`, `mentor_title`, `mentor_detail`) VALUES
-('11f1e0fd-4bea-11ee-9cc4-0a002700000a', 'OUR GOAL     ', 'Learn Ethiopian Languages', 'At Logo, we are passionate about promoting Ethiopian languages and bridging the linguistic gap for foreigners. Our team of experienced language experts and native speakers have developed a comprehensive curriculum to make learning Ethiopian languages accessible and enjoyable.', 'Discover the beauty and diversity of Ethiopian languages through our immersive courses, interactive lessons, and cultural insights. Start your language learning journey today!', 'Qualified lessons for students', 'Explore our range of courses designed to suit your language learning needs. Whether you are a beginner or an advanced learner, we have courses that cater to all levels. Choose from Amharic, Oromo, Tigrinya, Somali, and more!', 'Subscribe For Get Update Every New Courses', '20k+ students daily learn with Eduvi. Subscribe for new courses.', 'Want to share your knowledge? Join us a Mentor', 'High-definition video is video of higher resolution and quality than standard-definition. While there is no standardized meaning for high-definition, generally any video.');
+('11f1e0fd-4bea-11ee-9cc4-0a002700000a', 'OUR GOAL now    ', 'Learn Ethiopian Languages', 'At Logo, we are passionate about promoting Ethiopian languages and bridging the linguistic gap for foreigners. Our team of experienced language experts and native speakers have developed a comprehensive curriculum to make learning Ethiopian languages accessible and enjoyable.', 'Discover the beauty and diversity of Ethiopian languages through our immersive courses, interactive lessons, and cultural insights. Start your language learning journey today!', 'Qualified lessons for students', 'Explore our range of courses designed to suit your language learning needs. Whether you are a beginner or an advanced learner, we have courses that cater to all levels. Choose from Amharic, Oromo, Tigrinya, Somali, and more!', 'Subscribe For Get Update Every New Courses', '20k+ students daily learn with Eduvi. Subscribe for new courses.', 'Want to share your knowledge? Join us a Mentor', 'High-definition video is video of higher resolution and quality than standard-definition. While there is no standardized meaning for high-definition, generally any video.');
 
 --
 -- Indexes for dumped tables
@@ -430,23 +401,18 @@ ALTER TABLE `purchase`
   ADD KEY `book_id` (`book_id`);
 
 --
--- Indexes for table `question`
---
-ALTER TABLE `question`
-  ADD PRIMARY KEY (`question_id`),
-  ADD KEY `section_id` (`section_id`);
-
---
 -- Indexes for table `section`
 --
 ALTER TABLE `section`
-  ADD PRIMARY KEY (`section_id`);
+  ADD PRIMARY KEY (`section_id`),
+  ADD KEY `section_course` (`course_id`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `user_email` (`user_email`) USING HASH;
 
 --
 -- Indexes for table `web_content`
@@ -503,10 +469,10 @@ ALTER TABLE `purchase`
   ADD CONSTRAINT `purchase_ibfk_2` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `question`
+-- Constraints for table `section`
 --
-ALTER TABLE `question`
-  ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`section_id`) REFERENCES `section` (`section_id`);
+ALTER TABLE `section`
+  ADD CONSTRAINT `section_course` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
