@@ -32,11 +32,7 @@ function SignupModal({
 }) {
     const methods = useForm();
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = methods;
+    const { handleSubmit } = methods;
 
     const navigate = useNavigate();
 
@@ -74,7 +70,6 @@ function SignupModal({
     });
 
     const handleReCAPTCHAChange = (value) => {
-        console.log(value, "ReCAPTCHA");
         value ? setRecapValue(true) : setRecapValue(false);
     };
 
