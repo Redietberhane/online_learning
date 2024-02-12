@@ -18,7 +18,10 @@ import { AnimatePresence } from "framer-motion";
 import InputError from "./InputError";
 import ResponseMessage from "./ResponseMessage";
 import { BsFillXSquareFill } from "react-icons/bs";
+import ReCAPTCHA from "react-google-recaptcha";
 
+// 6Le1dm8pAAAAAG-B4suIkIm-IAvKO_sROfS48jL_ site key
+//  6Le1dm8pAAAAAAp2fihaKqRsGSYuyYjjDsrhNzZh secret key
 function SignupModal({
     toggle,
     toggleSignin,
@@ -40,6 +43,7 @@ function SignupModal({
     const [submitSuccess, setSubmitSuccess] = useState(false);
     const [failure, setFailure] = useState(false);
     const [response_msg, setMsg] = useState("");
+    const [recapValue, setRecapValue] = useState(false);
 
     const verifyCode = handleSubmit((data) => {
         axios
@@ -50,6 +54,8 @@ function SignupModal({
                 setFailure(false);
                 localStorage.setItem("username", res.data.username);
                 localStorage.setItem("user_id", res.data.user_id);
+                localStorage.setItem("user_email", res.data.user_email);
+                setVerifyModal(false);
                 logUpdate();
                 setTimeout(() => {
                     setSubmitSuccess(false);
@@ -66,6 +72,12 @@ function SignupModal({
                 }, 4000);
             });
     });
+
+    const handleReCAPTCHAChange = (value) => {
+        if (value) {
+            setRecapValue(true);
+        }
+    };
 
     const submitInputs = handleSubmit((data) => {
         axios
@@ -189,7 +201,7 @@ function SignupModal({
                                             {...password_validation}
                                             submitClicked={submitInputs}
                                         />
-                                        <label className="text-grey-500 text-sm">
+                                        {/* <label className="text-grey-500 text-sm">
                                             <AnimatePresence
                                                 mode="wait"
                                                 initial={false}>
@@ -220,9 +232,17 @@ function SignupModal({
                                             <a href="/" className="font-bold ">
                                                 terms and conditions
                                             </a>
-                                        </label>
+                                        </label> */}
+
+                                        <ReCAPTCHA
+                                            sitekey="6Le1dm8pAAAAAG-B4suIkIm-IAvKO_sROfS48jL_"
+                                            type="image"
+                                            onChange={handleReCAPTCHAChange}
+                                        />
+
                                         <button
                                             onClick={submitInputs}
+                                            disabled={!recapValue}
                                             className="w-9/12 h-10 my-3 bg-medium-purple hover:bg-medium-purple-hover rounded-md text-white">
                                             Sign Up
                                         </button>

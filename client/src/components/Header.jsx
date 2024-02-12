@@ -144,7 +144,7 @@ function Header({ logoutUpdate }) {
     //   /* global google */
     //   google.accounts.id.prompt();
     // }, []);
-    console.log(verifyModal, " verify before send");
+    // console.log(verifyModal, " verify before send");
     return (
         <>
             {signinModal && (
