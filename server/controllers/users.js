@@ -188,6 +188,7 @@ export const verifyUser = (req, res) => {
                             "You have successfully verified your account! Welcome to our platform.",
                         username: data[0].user_full_name,
                         user_id: data[0].user_id,
+                        user_email: data[0].user_email,
                     });
 
                     const strVerified = "Verified";
