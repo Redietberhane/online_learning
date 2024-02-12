@@ -74,9 +74,8 @@ function SignupModal({
     });
 
     const handleReCAPTCHAChange = (value) => {
-        if (value) {
-            setRecapValue(true);
-        }
+        console.log(value, "ReCAPTCHA");
+        value ? setRecapValue(true) : setRecapValue(false);
     };
 
     const submitInputs = handleSubmit((data) => {
@@ -101,7 +100,7 @@ function SignupModal({
             });
     });
 
-    console.log(verifyModal, "verify value at signup");
+    // console.log(verifyModal, "verify value at signup");
     return (
         <>
             <div className="modal-overlay h-screen w-full bg-black bg-opacity-60 fixed top-0 bottom-0 left-0 right-0 flex flex-col flex-nowrap justify-center items-center z-50">
@@ -243,7 +242,7 @@ function SignupModal({
                                         <button
                                             onClick={submitInputs}
                                             disabled={!recapValue}
-                                            className="w-9/12 h-10 my-3 bg-medium-purple hover:bg-medium-purple-hover rounded-md text-white">
+                                            className="w-9/12 h-10 my-3 bg-medium-purple hover:bg-medium-purple-hover rounded-md text-white disabled:bg-slate-400">
                                             Sign Up
                                         </button>
                                     </form>
